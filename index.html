@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="clock">
+        <div class="hour">
+            <div class="hr" id="hr"></div>
+        </div>
+        <div class="minite">
+            <div class="min" id="min"></div>
+        </div>
+        <div class="second">
+            <div class="sec" id="sec"></div>
+        </div>
+    </div>
+    <script>
+        let hour = document.getElementById("hr");
+        let minite = document.getElementById("min");
+        let second = document.getElementById("sec");
+        
+        setInterval(() => {
+        let date = new Date();
+        let hr = date.getHours()*30;
+        let min = date.getMinutes()*6;
+        let sec = date.getSeconds()*6;
+        hour.style.transform = `rotate(${hr+(min/12)}deg)`;
+        minite.style.transform  = `rotate(${min}deg)`;
+        second.style.transform  = `rotate(${sec}deg)`;
+        })
+        
+        
+    </script>
+</body>
+</html>
